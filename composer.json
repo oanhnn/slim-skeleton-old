@@ -1,0 +1,28 @@
+{
+    "name": "oanhnn/slim-skeleton",
+    "description": "A Slim Framework skeleton application for rapid development",
+    "keywords": ["microframework","rest","router"],
+    "homepage": "http://github.com/oanhnn/slim-skeleton",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "OanhNN",
+            "email": "oanhnn.bk@gmail.com.com",
+            "homepage": "http://github.com/oanhnn"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "slim/slim": "2.*",
+        "slim/views": "0.*",
+        "slim/extras": "2.*",
+        "twig/twig": "1.*",
+        "slimcontroller/slimcontroller": "0.2.3",
+        "vrana/notorm": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "": "src/"
+        }
+    }
+}
