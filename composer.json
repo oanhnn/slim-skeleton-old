@@ -24,5 +24,10 @@
         "psr-0": {
             "": "src/"
         }
+    },
+    "scripts": {
+        "post-create-project-cmd": [
+            "cp --backup --force app/config/db.php.dist app/config/db.php"
+        ]
     }
 }
