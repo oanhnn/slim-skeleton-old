@@ -1,5 +1,6 @@
 {
     "name": "oanhnn/slim-skeleton",
+    "type": "project",
     "description": "A Slim Framework skeleton application for rapid development",
     "keywords": ["microframework","rest","router"],
     "homepage": "https://github.com/oanhnn/SlimSkeleton/wiki",
@@ -20,6 +21,7 @@
         "slimcontroller/slimcontroller": "0.2.3",
         "vrana/notorm": "dev-master"
     },
+    "minimum-stability": "dev",
     "autoload": {
         "psr-0": {
             "": "src/"
