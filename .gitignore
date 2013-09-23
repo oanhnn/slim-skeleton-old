@@ -1,4 +1,4 @@
 /nbproject/
 /vendor/*
-!/vendor/
-/vendor/autoload.php
+/app/log/*
+/app/config/db.php

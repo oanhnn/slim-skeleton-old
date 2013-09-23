@@ -2,13 +2,13 @@
     "name": "oanhnn/slim-skeleton",
     "description": "A Slim Framework skeleton application for rapid development",
     "keywords": ["microframework","rest","router"],
-    "homepage": "http://github.com/oanhnn/slim-skeleton",
+    "homepage": "https://github.com/oanhnn/SlimSkeleton/wiki",
     "license": "MIT",
     "authors": [
         {
             "name": "OanhNN",
             "email": "oanhnn.bk@gmail.com.com",
-            "homepage": "http://github.com/oanhnn"
+            "homepage": "https://github.com/oanhnn"
         }
     ],
     "require": {
