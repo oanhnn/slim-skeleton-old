@@ -14,7 +14,7 @@ class Index extends \SlimController\SlimController
      * 
      * @return void
      */
-    public function indexAcrion(){
+    public function indexAction(){
         $name = $this->param('name', 'get');
         if ($name)
             echo "Hello {$name}!";
