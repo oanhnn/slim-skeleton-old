@@ -5,16 +5,16 @@
  */
 return array(
     // Application
-    'mode' => 'development',
+    'mode' => APP_ENV,
     // Debugging
-    'debug' => true,
+    'debug' => APP_ENV === 'development',
     // Logging
-    'log.writer' => null,
-    'log.level' => \Slim\Log::DEBUG,
-    'log.enabled' => true,
+    //'log.writer' => null,
+    //'log.level' => \Slim\Log::DEBUG,
+    //'log.enabled' => true,
     // View
-    'templates.path' => './templates',
-    'view' => '\Slim\View',
+    'templates.path' => realpath(APP_PATH . '/app/templates'),
+    //'view' => '\Slim\View',
     // Cookies
     'cookies.encrypt' => false,
     'cookies.lifetime' => '20 minutes',

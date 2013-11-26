@@ -14,12 +14,10 @@
     ],
     "require": {
         "php": ">=5.3.0",
-        "slim/slim": "2.*",
+        "monolog/monolog": "~1.6",
+        "slim/slim": "~2.3",
         "slim/views": "0.*",
-        "slim/extras": "2.*",
-        "twig/twig": "1.*",
-        "slimcontroller/slimcontroller": "0.2.3",
-        "vrana/notorm": "dev-master"
+        "twig/twig": "~1.13"
     },
     "minimum-stability": "dev",
     "autoload": {

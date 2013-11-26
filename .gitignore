@@ -1,4 +1,7 @@
 /nbproject/
 /vendor/*
 /app/log/*
+/app/cache/*
 /app/config/db.php
+!/app/cache/README.md
+!/app/log/README.md
