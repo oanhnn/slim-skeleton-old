@@ -3,5 +3,6 @@
 /app/log/*
 /app/cache/*
 /app/config/db.php
+/composer.lock
 !/app/cache/README.md
 !/app/log/README.md
