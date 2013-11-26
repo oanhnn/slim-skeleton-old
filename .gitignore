@@ -6,3 +6,4 @@
 /composer.lock
 !/app/cache/README.md
 !/app/log/README.md
+!/vendor/README.md
