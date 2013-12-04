@@ -25,10 +25,12 @@
             "": "src/"
         }
     },
+    "config": {
+        "bin-dir": "bin"
+    },
     "scripts": {
         "post-create-project-cmd": [
             "cp --backup --force app/config/db.php.dist app/config/db.php",
-            "rm -rf .git*",
             "find . -type f -name 'README.md' | xargs rm -rf"
         ]
     }
