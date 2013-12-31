@@ -2,11 +2,14 @@
 /**
  * Config router of app
  * <code>
- * '/some/path' => 'className:methodName',
- * '/some/path' => array('className:methodName', 'get'),
- * '/some/path' => array('className:methodName', 'get', function(){}),
+ * 'name' => array($path [, $middleware], $callable [, $methods])
  * </code>
+ * vars:
+ * $path        string 
+ * $middleware  string|Closure
+ * $callable    string|Closure
+ * $methods     string|array
  */
 return array(
-    '/' => array('Demo\\Frontend\\Controller\\Index:index', 'GET')
+    'home' => array('/:page', 'Demo\\Frontend\\Controller\\IndexController:indexAction', 'GET')
 );

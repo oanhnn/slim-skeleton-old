@@ -7,9 +7,7 @@ define('APP_ENV', getenv('APP_ENV') ? getenv('APP_ENV') : 'production');
 require APP_PATH . '/vendor/autoload.php';
 
 $config = require_once APP_PATH . '/app/config/config.php';
-//$router = require_once APP_PATH . '/app/config/router.php';
 //$db     = require_once APP_PATH . '/app/config/db.php';
-
 // Prepare app
 $app = new \Slim\Slim($config);
 
@@ -32,6 +30,25 @@ $app->view->parserOptions = array(
     'autoescape' => true
 );
 $app->view->parserExtensions = array(new \Slim\Views\TwigExtension());
+
+// Configures routers
+$routers = require_once APP_PATH . '/app/config/router.php';
+foreach ($routers as $name => $router) {
+    $path = array_shift($router);
+    $methods = (array) array_pop($router);
+    $callable = array_pop($router);
+    $route = $app->map($path, $callable);
+    
+    foreach ($methods as $method) {
+        $route->via($method);
+    }
+    if (count($router) > 0) {
+        $route->setMiddleware($router);
+    }
+    if (is_string($name)) {
+        $route->setName($name);
+    }
+}
 
 // Define routes
 $app->get('/', function () use ($app) {

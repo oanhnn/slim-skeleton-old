@@ -28,8 +28,4 @@ return array(
     'cookies.cipher_mode' => MCRYPT_MODE_CBC,
     // HTTP
     'http.version' => '1.1',
-    // Controller
-    'controller.class_prefix'    => '',
-    'controller.method_suffix'   => 'Action',
-    'controller.template_suffix' => 'php',
 );
