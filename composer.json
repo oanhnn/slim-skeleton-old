@@ -15,14 +15,17 @@
     "require": {
         "php": ">=5.3.0",
         "monolog/monolog": "~1.6",
-        "slim/slim": "~2.3",
+        "slim/slim": "~2.4",
         "slim/views": "0.*",
         "twig/twig": "~1.13"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.8.*"
     },
     "minimum-stability": "dev",
     "autoload": {
         "psr-0": {
-            "": "src/"
+            "": ["src/", "tests/"]
         }
     },
     "config": {
