@@ -33,7 +33,8 @@
     },
     "scripts": {
         "post-create-project-cmd": [
-            "cp --backup --force app/config/db.php.dist app/config/db.php"
+            "cp --backup --force app/config/db.php.dist app/config/db.php",
+            "chmod -R 777 app/logs/ app/cache/"
         ]
     }
 }
