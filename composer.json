@@ -33,8 +33,7 @@
     },
     "scripts": {
         "post-create-project-cmd": [
-            "cp --backup --force app/config/db.php.dist app/config/db.php",
-            "find . -type f -name 'README.md' | xargs rm -rf"
+            "cp --backup --force app/config/db.php.dist app/config/db.php"
         ]
     }
 }
