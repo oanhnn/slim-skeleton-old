@@ -11,5 +11,5 @@
  * $methods     string|array
  */
 return array(
-    'home' => array('/:page', 'Demo\\Frontend\\Controller\\IndexController:indexAction', 'GET')
+    //'home' => array('/:page', 'Demo\\Frontend\\Controller\\IndexController:indexAction', 'GET')
 );

@@ -29,3 +29,9 @@ RewriteEngine On
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.php [QSA,L]
+
+#===============================================================================
+# Environment variables
+#===============================================================================
+# Comment below line for production mode
+SetEnv APP_ENV development
