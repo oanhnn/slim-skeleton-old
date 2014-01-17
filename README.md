@@ -19,7 +19,7 @@ http://getcomposer.org/ or just run the following command:
 
 Then, use the `create-project` command to generate a new Symfony application:
 
-    php composer.phar create-project -s dev oanhnn/slim-skeleton path/to/install
+    php composer.phar create-project oanhnn/slim-skeleton path/to/install
 
 Composer will create Slim project and all its dependencies under the
 `path/to/install` directory.
