@@ -34,7 +34,10 @@
     "scripts": {
         "post-create-project-cmd": [
             "cp --backup --force app/config/db.php.dist app/config/db.php",
-            "chmod -R 777 app/logs/ app/cache/"
+            "chmod -R 777 app/logs/ app/cache/",
+            "find app/ -type f -name 'README.md' | xargs rm -rf",
+            "find public/ -type f -name 'README.md' | xargs rm -rf",
+            "rm -rf bin/README.md src/README.md vendor/README.md"
         ]
     }
 }
