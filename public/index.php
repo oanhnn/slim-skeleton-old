@@ -1,8 +1,8 @@
 <?php
 // define a working directory
-defined('APP_PATH') || define('APP_PATH', dirname(__FILE__)); // PHP v5.3+
+defined('APP_PATH') || define('APP_PATH', dirname(__DIR__) . DIRECTORY_SEPARATOR .'app'); // PHP v5.3+
 // define application environment
-defined('APP_PATH') || define('APP_ENV', getenv('APP_ENV') ? getenv('APP_ENV') : 'production');
+defined('APP_ENV') || define('APP_ENV', getenv('APP_ENV') ? getenv('APP_ENV') : 'production');
 
 require_once APP_PATH . '/../vendor/autoload.php';
 
