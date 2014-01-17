@@ -13,7 +13,7 @@ return array(
     //'log.level' => \Slim\Log::DEBUG,
     //'log.enabled' => true,
     // View
-    'templates.path' => realpath(APP_PATH . '/app/templates'),
+    'templates.path' => realpath(APP_PATH . '/templates'),
     //'view' => '\Slim\View',
     // Cookies
     'cookies.encrypt' => false,

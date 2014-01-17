@@ -1,13 +1,13 @@
 <?php
 // define a working directory
-define('APP_PATH', dirname(__DIR__)); // PHP v5.3+
+defined('APP_PATH') || define('APP_PATH', dirname(__FILE__)); // PHP v5.3+
 // define application environment
-define('APP_ENV', getenv('APP_ENV') ? getenv('APP_ENV') : 'production');
+defined('APP_PATH') || define('APP_ENV', getenv('APP_ENV') ? getenv('APP_ENV') : 'production');
 
-require APP_PATH . '/vendor/autoload.php';
+require_once APP_PATH . '/../vendor/autoload.php';
 
-$config = require_once APP_PATH . '/app/config/config.php';
-//$db     = require_once APP_PATH . '/app/config/db.php';
+$config = require_once APP_PATH . '/config/config.php';
+
 // Prepare app
 $app = new \Slim\Slim($config);
 
@@ -15,8 +15,9 @@ $app = new \Slim\Slim($config);
 // (Singleton resources retrieve the same log resource definition each time)
 $app->container->singleton('log', function () {
     $log = new \Monolog\Logger('slim-skeleton');
-    $log->pushHandler(new \Monolog\Handler\StreamHandler(APP_PATH . '/app/logs/app.log', 
-            \Psr\Log\LogLevel::DEBUG));
+    $log->pushHandler(
+        new \Monolog\Handler\StreamHandler(APP_PATH . '/logs/app.log', \Psr\Log\LogLevel::DEBUG)
+    );
     return $log;
 });
 
@@ -24,7 +25,7 @@ $app->container->singleton('log', function () {
 $app->view(new \Slim\Views\Twig());
 $app->view->parserOptions = array(
     'charset' => 'utf-8',
-    'cache' => realpath(APP_PATH . '/app/cache'),
+    'cache' => realpath(APP_PATH . '/cache'),
     'auto_reload' => true,
     'strict_variables' => false,
     'autoescape' => true
@@ -32,13 +33,13 @@ $app->view->parserOptions = array(
 $app->view->parserExtensions = array(new \Slim\Views\TwigExtension());
 
 // Configures routers
-$routers = require_once APP_PATH . '/app/config/router.php';
+$routers = require_once APP_PATH . '/config/router.php';
 foreach ($routers as $name => $router) {
     $path = array_shift($router);
     $methods = (array) array_pop($router);
     $callable = array_pop($router);
     $route = $app->map($path, $callable);
-    
+
     foreach ($methods as $method) {
         $route->via($method);
     }
