@@ -37,15 +37,15 @@ class Installer
      */
     public static function createAppConfig($dir, $io)
     {
-        $io->write("=========================");
+        $io->write("==================================================");
         $io->write("Create the config/app.php file");
-        $io->write("=========================");
+        $io->write("==================================================");
 
         $appConfig     = $dir . '/config/app.php';
         $defaultConfig = $dir . '/config/app.default.php';
         if (!file_exists($appConfig)) {
             copy($defaultConfig, $appConfig);
-            $io->write('Created `config/app.php` file');
+            $io->write("=> Created `{$appConfig}` file");
         }
     }
 
@@ -60,9 +60,9 @@ class Installer
      */
     public static function setFolderPermissions($dir, $io)
     {
-        $io->write("=========================");
+        $io->write("==================================================");
         $io->write("Set globally writable permissions");
-        $io->write("=========================");
+        $io->write("==================================================");
 
         // Change the permissions on a path and output the results.
         $changePerms = function ($path, $perms, $io) {
@@ -74,9 +74,9 @@ class Installer
 
             $res = chmod($path, $currentPerms | $perms);
             if ($res) {
-                $io->write('Permissions set on ' . $path);
+                $io->write("=> Permissions set on `{$path}`");
             } else {
-                $io->write('Failed to set permissions on ' . $path);
+                $io->write("=> Failed to set permissions on `{$path}`");
             }
         };
 
@@ -108,9 +108,9 @@ class Installer
      */
     public static function setSecuritySalt($dir, $io)
     {
-        $io->write("=========================");
+        $io->write("==================================================");
         $io->write("Set the security.salt value");
-        $io->write("=========================");
+        $io->write("==================================================");
 
         $config  = $dir . '/config/app.php';
         $content = file_get_contents($config);
@@ -119,16 +119,16 @@ class Installer
         $content = str_replace('__SALT__', $newKey, $content, $count);
 
         if ($count == 0) {
-            $io->write('No Security.salt placeholder to replace.');
+            $io->write('=> No Security.salt placeholder to replace.');
             return;
         }
 
         $result = file_put_contents($config, $content);
         if ($result) {
-            $io->write('Updated Security.salt value in config/app.php');
+            $io->write('=> Updated Security.salt value in config/app.php');
             return;
         }
-        $io->write('Unable to update Security.salt value.');
+        $io->write('=> Unable to update Security.salt value.');
     }
 
     /**
@@ -155,10 +155,11 @@ class Installer
             'vendor/README.md'
         ];
         foreach ($files as $file) {
-            if (unlink($dir . '/' . $file)) {
-                $io->write("Removed file: {$file}");
+            $filename = $dir . '/' . $file;
+            if (unlink($filename)) {
+                $io->write("=> Removed file: `{$filename}`");
             } else {
-                $io->write("Unable to remove file: {$file}");
+                $io->write("=> Unable to remove file: `{$filename}`");
             }
         }
     }
