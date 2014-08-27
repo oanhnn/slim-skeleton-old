@@ -1,5 +1,11 @@
 {% extends "layout.html.twig" %}
 
 {% block body %}
-Hello {{name}}
+    <h3>This is page {{page}}</h3>
+    <ul>
+        <li><a href="{{ urlFor('pages', {"page": "home"}) }}">Home</a></li>
+        <li><a href="{{ urlFor('pages', {"page": "blog"}) }}">Blog</a></li>
+        <li><a href="{{ urlFor('pages', {"page": "contact_us"}) }}">Contact Us</a></li>
+        <li><a href="{{ urlFor('pages', {"page": "about_us"}) }}">About Us</a></li>
+    </ul>
 {% endblock %}

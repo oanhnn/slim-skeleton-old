@@ -2,7 +2,9 @@
 /**
  * Config router of app
  * <code>
- * 'name' => array($path [, $middleware], $callable [, $methods])
+ * 'name' => [$path, $callable, $methods]
+ * 'name' => [$path, $middleware, $callable, $methods]
+ * 'name' => [$path, $middleware1, $middleware2, $callable, $methods]
  * </code>
  * vars:
  * $path        string 
@@ -10,6 +12,7 @@
  * $callable    string|Closure
  * $methods     string|array
  */
-return array(
-    //'home' => array('/:page', 'Demo\\Frontend\\Controller\\IndexController:indexAction', 'GET')
-);
+return [
+    'home' => ['/', 'App\\Controller\\Pages:indexAction', 'GET'],
+    'pages' => ['/:page', 'App\\Controller\\Pages:indexAction', 'GET'],
+];
