@@ -1,5 +1,8 @@
 <?php
 
+// define application environment
+defined('APP_ENV') || define('APP_ENV', getenv('APP_ENV') ? getenv('APP_ENV') : 'production');
+
 return [
     'App' => [
         // Application
@@ -11,7 +14,7 @@ return [
         //'log.level' => \Slim\Log::DEBUG,
         //'log.enabled' => true,
         // View
-        'templates.path'      => realpath(APP_PATH . '/templates'),
+        'templates.path'      => realpath(APP_PATH . '/src/templates'),
         //'view' => '\Slim\View',
         // Cookies
         'cookies.encrypt'     => false,

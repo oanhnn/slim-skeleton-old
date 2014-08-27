@@ -1,63 +1,11 @@
-<?php
-// define a working directory
-defined('APP_PATH') || define('APP_PATH', dirname(__DIR__) . DIRECTORY_SEPARATOR .'app'); // PHP v5.3+
-// define application environment
-defined('APP_ENV') || define('APP_ENV', getenv('APP_ENV') ? getenv('APP_ENV') : 'production');
+<?php 
+if (php_sapi_name() === 'cli-server') {
+	$_SERVER['PHP_SELF'] = '/' . basename(__FILE__);
 
-require_once APP_PATH . '/../vendor/autoload.php';
-
-$config = require_once APP_PATH . '/config/config.php';
-
-// Prepare app
-$app = new \Slim\Slim($config);
-
-// Create monolog logger and store logger in container as singleton 
-// (Singleton resources retrieve the same log resource definition each time)
-$app->container->singleton('log', function () {
-    $log = new \Monolog\Logger('slim-skeleton');
-    $log->pushHandler(
-        new \Monolog\Handler\StreamHandler(APP_PATH . '/logs/app.log', \Psr\Log\LogLevel::DEBUG)
-    );
-    return $log;
-});
-
-// Prepare view
-$app->view(new \Slim\Views\Twig());
-$app->view->parserOptions = array(
-    'charset' => 'utf-8',
-    'cache' => realpath(APP_PATH . '/cache'),
-    'auto_reload' => true,
-    'strict_variables' => false,
-    'autoescape' => true
-);
-$app->view->parserExtensions = array(new \Slim\Views\TwigExtension());
-
-// Configures routers
-$routers = require_once APP_PATH . '/config/router.php';
-foreach ($routers as $name => $router) {
-    $path = array_shift($router);
-    $methods = (array) array_pop($router);
-    $callable = array_pop($router);
-    $route = $app->map($path, $callable);
-
-    foreach ($methods as $method) {
-        $route->via($method);
-    }
-    if (count($router) > 0) {
-        $route->setMiddleware($router);
-    }
-    if (is_string($name)) {
-        $route->setName($name);
-    }
+	$url = parse_url(urldecode($_SERVER['REQUEST_URI']));
+	$file = __DIR__ . $url['path'];
+	if (strpos($url['path'], '..') === false && strpos($url['path'], '.') !== false && is_file($file)) {
+		return false;
+	}
 }
-
-// Define routes
-$app->get('/', function () use ($app) {
-    // Sample log message
-    $app->log->info("Slim-Skeleton '/' route");
-    // Render index view
-    $app->render('index.html.twig', array('name' => 'slim framework'));
-});
-
-// Run app
-$app->run();
+require __DIR__ . '/../config/bootstrap.php';
