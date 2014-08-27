@@ -23,5 +23,3 @@ Then, use the `create-project` command to generate a new Symfony application:
 
 Composer will create Slim project and all its dependencies under the
 `path/to/install` directory.
-
-test

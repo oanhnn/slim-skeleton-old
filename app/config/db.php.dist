@@ -1,7 +1,0 @@
-<?php 
-return array(
-    'dsn'      => 'mysql:host=127.0.0.1;post=3306;dbname=test;charset=utf8',
-    'username' => 'root',
-    'password' => '',
-    'options'  => array()
-);
