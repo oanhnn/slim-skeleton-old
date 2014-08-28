@@ -24,7 +24,7 @@ return [
         'cookies.secure'      => false,
         'cookies.httponly'    => false,
         // Encryption
-        'cookies.secret_key'  => '__KEY__',
+        'cookies.secret_key'  => '__@@KEY@@__',
         'cookies.cipher'      => MCRYPT_RIJNDAEL_256,
         'cookies.cipher_mode' => MCRYPT_MODE_CBC,
         // HTTP

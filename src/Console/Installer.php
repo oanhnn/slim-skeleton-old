@@ -116,7 +116,7 @@ class Installer
         $content = file_get_contents($config);
 
         $newKey  = hash('sha256', $dir . php_uname() . microtime(true));
-        $content = str_replace('__SALT__', $newKey, $content, $count);
+        $content = str_replace('__@@KEY@@__', $newKey, $content, $count);
 
         if ($count == 0) {
             $io->write('=> No Security.salt placeholder to replace.');
@@ -140,9 +140,9 @@ class Installer
      */
     public static function removeReadmeFiles($dir, $io)
     {
-        $io->write("=========================");
+        $io->write("==================================================");
         $io->write("Remove README.md files");
-        $io->write("=========================");
+        $io->write("==================================================");
 
         $files = [
             'bin/README.md',
