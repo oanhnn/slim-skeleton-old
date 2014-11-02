@@ -152,14 +152,19 @@ class Installer
             'tests/README.md',
             'tmp/cache/README.md',
             'tmp/logs/README.md',
-            'vendor/README.md'
+            'vendor/README.md',
+            'webroot/css/README.md',
+            'webroot/img/README.md',
+            'webroot/js/README.md',
         ];
         foreach ($files as $file) {
             $filename = $dir . '/' . $file;
-            if (unlink($filename)) {
-                $io->write("=> Removed file: `{$filename}`");
-            } else {
-                $io->write("=> Unable to remove file: `{$filename}`");
+            if (is_file($filename) || is_link($filename)) {
+                if (unlink($filename)) {
+                    $io->write("=> Removed file: `{$filename}`");
+                } else {
+                    $io->write("=> Unable to remove file: `{$filename}`");
+                }
             }
         }
     }

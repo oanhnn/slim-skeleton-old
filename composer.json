@@ -14,10 +14,11 @@
     ],
     "require": {
         "php": ">=5.4",
-        "monolog/monolog": "~1.6",
-        "slim/slim": "~2.4",
-        "slim/views": "~0.1",
-        "twig/twig": "~1.13"
+        "ext-mcrypt": "*",
+        "monolog/monolog": "~1.11.0",
+        "slim/slim": "~2.4.0",
+        "slim/views": "~0.1.2",
+        "twig/twig": "~1.16.2"
     },
     "require-dev": {
         "phpunit/phpunit": "*"
