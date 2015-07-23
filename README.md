@@ -3,25 +3,41 @@ Slim Skeleton
 
 [![Join the chat at https://gitter.im/oanhnn/slim-skeleton](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/oanhnn/slim-skeleton?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-1) Creating project
-----------------------------------
+A skeleton for [Slim Framework v2](http://slimframework.com/) following MVC pattern.
 
-When it comes to creating project with Slim Framework, you have the
-following options.
+Requirements
+------------
 
-### Use Composer (*recommended*)
+* PHP 5.4.0 and up.
+* mcrypt extension
 
-As project uses [Composer] to manage its dependencies, the recommended way
-to create a new project is to use it.
+Usage
+------------
+Using `composer` to create new project:
 
-If you don't have Composer yet, download it following the instructions on
-http://getcomposer.org/ or just run the following command:
+```shell
+$ composer create-project oanhnn/slim-skeleton path/to/project
+```
 
-    curl -s http://getcomposer.org/installer | php
+Composer will create Slim project and all its dependencies under the `path/to/project` directory.
 
-Then, use the `create-project` command to generate a new Symfony application:
+> If you don't have Composer yet, download it following the instructions on http://getcomposer.org/ or just run the following command:
+> ```shell
+> $ curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+> ```
 
-    php composer.phar create-project oanhnn/slim-skeleton path/to/install
+Contributing
+------------
+All code contributions must go through a pull request and approved by a core developer before being merged.
+This is to ensure proper review of all the code.
 
-Composer will create Slim project and all its dependencies under the
-`path/to/install` directory.
+Fork the project, create a feature branch, and send a pull request.
+
+To ensure a consistent code base, you should make sure the code follows
+the [PSR-1](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md).
+
+If you would like to help take a look at the [list of issues](https://github.com/oanhnn/slim-skeleton/issues).
+
+License
+-------
+Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
