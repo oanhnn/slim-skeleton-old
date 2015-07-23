@@ -1,6 +1,8 @@
 Slim Skeleton
 =============
 
+[![Join the chat at https://gitter.im/oanhnn/slim-skeleton](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/oanhnn/slim-skeleton?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 1) Creating project
 ----------------------------------
 
