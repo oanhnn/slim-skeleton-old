@@ -13,6 +13,7 @@ Requirements
 
 Usage
 ------------
+#### Create project
 Using `composer` to create new project:
 
 ```shell
@@ -25,6 +26,10 @@ Composer will create Slim project and all its dependencies under the `path/to/pr
 > ```shell
 > $ curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 > ```
+
+#### Deploy project
+To deploy a project using this skeleton, you can use [Deployer](http://deployer.org).   
+See an example in [here](https://github.com/oanhnn/deployer-example).
 
 Contributing
 ------------
