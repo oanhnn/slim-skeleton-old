@@ -1,13 +1,11 @@
 # User specific & automatically generated files #
 #################################################
-/build
-/dist
-/tags
+/tmp/build
 /node_modules
 /bower_components
 /composer.lock
 /composer.phar
-*.mo
+/app/config/app.php
 
 # IDE and editor specific files #
 #################################
@@ -24,3 +22,4 @@
 Icon?
 ehthumbs.db
 Thumbs.db
+*.mo

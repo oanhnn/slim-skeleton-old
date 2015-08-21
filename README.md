@@ -1,18 +1,21 @@
 Slim Skeleton
 =============
-
+[![Build Status](https://travis-ci.org/oanhnn/slim-skeleton.svg?branch=3.x)](https://travis-ci.org/oanhnn/slim-skeleton)
 [![Join the chat at https://gitter.im/oanhnn/slim-skeleton](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/oanhnn/slim-skeleton?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-A skeleton for [Slim Framework v2](http://slimframework.com/) following MVC pattern.
+A skeleton for [Slim Framework v3](http://slimframework.com/) following MVC pattern.
 
 Requirements
 ------------
 
-* PHP 5.5.0 and up.
-* mcrypt extension
+* PHP >= 5.5.0
+* slim/slim: ~3.0.0
+* slim/twig-view: ~1.1.0
+* monolog/monolog: ~1.13
 
 Usage
 -----
+
 #### Create project
 Using `composer` to create new project:
 
@@ -35,25 +38,26 @@ See an example in [here](https://github.com/oanhnn/deployer-example).
 ```
 path/to/project
 |
-|-- bin
-|-- config
-|-- public
-|-- resources
+|-- app
+|   |-- config
 |   |-- lang
-|   |-- views
-|
-|-- src
-|-- tests
+|   |-- src
+|   |-- tests
+|   \-- views
+|   
+|-- bin
+|-- public
 |-- tmp
 |   |-- cache
-|   |-- logs
+|   \-- logs
 |
-|-- vendor
+\-- vendor
 
 ```
 
 Contributing
 ------------
+
 All code contributions must go through a pull request and approved by a core developer before being merged.
 This is to ensure proper review of all the code.
 
@@ -66,8 +70,10 @@ If you would like to help take a look at the [list of issues](https://github.com
 
 Change log
 ----------
+
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
 
 License
 -------
+
 Licensed under the MIT license. Please see [License File](LICENSE.md) for more information.

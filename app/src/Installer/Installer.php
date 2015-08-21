@@ -19,13 +19,13 @@ class Installer
      */
     public static function postInstall(Event $event)
     {
-        $io = $event->getIO();
-
-        $rootDir = dirname(dirname(__DIR__));
-        static::removeReadmeFiles($rootDir, $io);
-        static::createAppConfig($rootDir, $io);
-        static::setFolderPermissions($rootDir, $io);
-        static::setSecuritySalt($rootDir, $io);
+//        $io = $event->getIO();
+//
+//        $rootDir = dirname(dirname(__DIR__));
+//        static::removeReadmeFiles($rootDir, $io);
+//        static::createAppConfig($rootDir, $io);
+//        static::setFolderPermissions($rootDir, $io);
+//        static::setSecuritySalt($rootDir, $io);
     }
 
     /**

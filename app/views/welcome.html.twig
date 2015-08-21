@@ -1,0 +1,60 @@
+{% extends "layout.html.twig" %}
+
+{% block body %}
+    <div class="container">
+        <div class="page-header">
+            <h1>Slim <small>a microframework for PHP</small></h1>
+        </div>
+        <div>
+            <ul>
+                <li><a href="http://www.slimframework.com">Homepage</a></li>
+                <li><a href="http://www.slimframework.com/blog">Blog</a></li>
+                <li><a href="http://docs.slimframework.com">Documents</a></li>
+                <li><a href="https://github.com/slim/slim">Github</a></li>
+            </ul>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            This project is used <a href="https://github.com/oanhnn/slim-skeleton">oanhnn/slim-skeleton</a>
+        </div>
+    </footer>
+{% endblock %}
+
+{% block stylesheets %}
+<style type="text/css">
+    /* Sticky footer styles
+    -------------------------------------------------- */
+    html {
+        position: relative;
+        min-height: 100%;
+    }
+    body {
+        /* Margin bottom by footer height */
+        margin-bottom: 60px;
+    }
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        /* Set the fixed height of the footer here */
+        height: 60px;
+        background-color: #f5f5f5;
+    }
+
+
+    /* Custom page CSS
+    -------------------------------------------------- */
+    /* Not required for template or sticky footer method. */
+
+    .container {
+        width: auto;
+        max-width: 680px;
+        padding: 0 15px;
+        margin: 0 auto;
+    }
+    .container .text-muted {
+        margin: 20px 0;
+    }
+</style>
+{% endblock %}

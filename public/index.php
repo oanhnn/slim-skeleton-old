@@ -12,6 +12,19 @@ if (php_sapi_name() === 'cli-server') {
     }
 }
 
-// run Application
-$app = require __DIR__ . '/../config/bootstrap.php';
+/**
+ * Defines constants
+ */
+//define('ROOT_PATH', dirname(__DIR__));
+//define('APP_PATH', ROOT_PATH . DIRECTORY_SEPARATOR . 'app');
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+/**
+ * Run application
+ * @var \Slim\App $app
+ */
+/*@var $app \Slim\App */
+$app = require_once __DIR__ . '/../app/config/bootstrap.php';
 $app->run();
