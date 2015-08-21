@@ -13,4 +13,5 @@ if (php_sapi_name() === 'cli-server') {
 }
 
 // run Application
-require __DIR__ . '/../config/bootstrap.php';
+$app = require __DIR__ . '/../config/bootstrap.php';
+$app->run();

@@ -8,11 +8,11 @@ A skeleton for [Slim Framework v2](http://slimframework.com/) following MVC patt
 Requirements
 ------------
 
-* PHP 5.4.0 and up.
+* PHP 5.5.0 and up.
 * mcrypt extension
 
 Usage
-------------
+-----
 #### Create project
 Using `composer` to create new project:
 
@@ -31,6 +31,27 @@ Composer will create Slim project and all its dependencies under the `path/to/pr
 To deploy a project using this skeleton, you can use [Deployer](http://deployer.org).   
 See an example in [here](https://github.com/oanhnn/deployer-example).
 
+#### Directories structure
+```
+path/to/project
+|
+|-- bin
+|-- config
+|-- public
+|-- resources
+|   |-- lang
+|   |-- views
+|
+|-- src
+|-- tests
+|-- tmp
+|   |-- cache
+|   |-- logs
+|
+|-- vendor
+
+```
+
 Contributing
 ------------
 All code contributions must go through a pull request and approved by a core developer before being merged.
@@ -39,10 +60,14 @@ This is to ensure proper review of all the code.
 Fork the project, create a feature branch, and send a pull request.
 
 To ensure a consistent code base, you should make sure the code follows
-the [PSR-1](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md).
+the [PSR-2](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md).
 
 If you would like to help take a look at the [list of issues](https://github.com/oanhnn/slim-skeleton/issues).
 
+Change log
+----------
+Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
+
 License
 -------
-Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
+Licensed under the MIT license. Please see [License File](LICENSE.md) for more information.

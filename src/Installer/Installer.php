@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Console;
+namespace App\Installer;
 
 use \Composer\Script\Event;
 
@@ -129,44 +129,6 @@ class Installer
             return;
         }
         $io->write('=> Unable to update Security.salt value.');
-    }
-
-    /**
-     * Remove README.md files.
-     *
-     * @param string $dir The application's root directory.
-     * @param \Composer\IO\IOInterface $io IO interface to write to console.
-     * @return void
-     */
-    public static function removeReadmeFiles($dir, $io)
-    {
-        $io->write("==================================================");
-        $io->write("Remove README.md files");
-        $io->write("==================================================");
-
-        $files = [
-            'bin/README.md',
-            'config/README.md',
-            'src/README.md',
-            'src/templates/README.md',
-            'tests/README.md',
-            'tmp/cache/README.md',
-            'tmp/logs/README.md',
-            'vendor/README.md',
-            'webroot/css/README.md',
-            'webroot/img/README.md',
-            'webroot/js/README.md',
-        ];
-        foreach ($files as $file) {
-            $filename = $dir . '/' . $file;
-            if (is_file($filename) || is_link($filename)) {
-                if (unlink($filename)) {
-                    $io->write("=> Removed file: `{$filename}`");
-                } else {
-                    $io->write("=> Unable to remove file: `{$filename}`");
-                }
-            }
-        }
     }
 
 }

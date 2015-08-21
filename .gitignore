@@ -3,13 +3,10 @@
 /build
 /dist
 /tags
+/node_modules
+/bower_components
 /composer.lock
 /composer.phar
-/phpunit.xml
-/vendor/*
-/config/app.php
-/tmp/*
-/bin/*
 *.mo
 
 # IDE and editor specific files #
