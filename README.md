@@ -10,8 +10,14 @@ Requirements
 
 * PHP >= 5.5.0
 * slim/slim: ~3.0.0
-* slim/twig-view: ~1.1.0
 * monolog/monolog: ~1.13
+
+Optional:
+
+* slim/twig-view: ^2.0
+* slim/php-view: ^2.0
+* slim/csrf: ^0.4.0
+* slim/http-cache: ^0.3.0
 
 Usage
 -----
@@ -20,7 +26,7 @@ Usage
 Using `composer` to create new project:
 
 ```shell
-$ composer create-project oanhnn/slim-skeleton path/to/project
+$ composer create-project oanhnn/slim-skeleton path/to/project --prefer-dist
 ```
 
 Composer will create Slim project and all its dependencies under the `path/to/project` directory.
@@ -30,15 +36,37 @@ Composer will create Slim project and all its dependencies under the `path/to/pr
 > $ curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 > ```
 
+#### Build assets (css, js, ...)
+```shell
+$ composer build
+```
+
+#### Unit test
+```shell
+$ composer test
+```
+
+#### Run PHP build-in server
+Run a build-in server on 0.0.0.0:8888
+```shell
+$ composer serve
+```
+
+Open web browser with address http://localhost:8888
+
 #### Deploy project
 To deploy a project using this skeleton, you can use [Deployer](http://deployer.org).   
 See an example in [here](https://github.com/oanhnn/deployer-example).
+
+#### Run task with gulp
+// TODO
 
 #### Directories structure
 ```
 path/to/project
 |
 |-- app
+|   |-- assets
 |   |-- config
 |   |-- lang
 |   |-- src
@@ -47,6 +75,8 @@ path/to/project
 |   
 |-- bin
 |-- public
+|   \-- assets
+|
 |-- tmp
 |   |-- cache
 |   \-- logs
