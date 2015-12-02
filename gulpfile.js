@@ -22,9 +22,9 @@ var dirs = {
 // -----------------------------------------------------------------------------
 gulp.task('clean', function () {
     require('del')([
-        dirs.dist+'/**',
-        '!'+dirs.dist,
-        '!'+dirs.dist+'/.gitignore'
+        dirs.dist + '/**',
+        '!' + dirs.dist,
+        '!' + dirs.dist + '/.gitignore'
     ]);
 });
 
@@ -41,7 +41,9 @@ gulp.task('jshint', function () {
 gulp.task('build:css', function () {
     return gulp.src(dirs.src + '/sass/**/*.scss')
         .pipe(plugins.sass())
-        .pipe(plugins.minifyCss({compatibility: 'ie8'}))
+        .pipe(plugins.minifyCss({
+            compatibility: 'ie8'
+        }))
         .pipe(plugins.header(banner))
         .pipe(gulp.dest(dirs.dist + '/css'));
 });
@@ -60,8 +62,7 @@ gulp.task('watch', function () {
 
 gulp.task('build', function (done) {
     runSequence(
-        ['clean', 'jshint'],
-        ['build:css', 'build:js'],
+        ['clean', 'jshint'], ['build:css', 'build:js'],
         done);
 });
 

@@ -10,7 +10,7 @@ require_once ROOT_PATH . '/vendor/autoload.php';
 $settings = require_once APP_PATH . '/config/app.php';
 
 // Create container for application
-$container = new \Slim\Container(compact('settings'));
+$container = new \Slim\Container($settings);
 
 // Register service providers & factories
 $container->register(new \App\Providers\TwigServiceProvider());

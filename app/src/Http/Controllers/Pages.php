@@ -7,31 +7,8 @@ use Slim\Http\Response;
 use Slim\Views\Twig;
 use Psr\Log\LoggerInterface;
 
-class Pages
+class Pages extends Base
 {
-
-    /**
-     * @var \Slim\Views\Twig;
-     */
-    private $view;
-
-    /**
-     * @var \Psr\Log\LoggerInterface
-     */
-    private $logger;
-
-    /**
-     * Construct
-     *
-     * @param Twig $view
-     * @param LoggerInterface $logger
-     */
-//    public function __construct(Twig $view, LoggerInterface $logger)
-//    {
-//        $this->view   = $view;
-//        $this->logger = $logger;
-//    }
-
     /**
      * Index action
      *
@@ -40,9 +17,9 @@ class Pages
      * @param array $args
      * @return Response
      */
-    public function indexAction(Request $request, Response $response, $args)
+    public function index(Request $request, Response $response, $args)
     {
-        $response->write('Hello world!');
+        $this->render($response, 'welcome.html');
     }
 
 }

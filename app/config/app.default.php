@@ -2,12 +2,17 @@
 
 return [
     'settings' => [
+        'httpVersion' => '1.1',
+        'responseChunkSize' => 4096,
+        'outputBuffering' => 'append',
+        'determineRouteBeforeAppMiddleware' => false,
+        'displayErrorDetails' => false,
         // View settings
-        'view'   => [
+        'view' => [
             'template_path' => APP_PATH . '/views',
-            'twig'          => [
-                'cache'       => ROOT_PATH . '/tmp/cache/twig',
-                'debug'       => true,
+            'twig' => [
+                'cache' => ROOT_PATH . '/tmp/cache/twig',
+                'debug' => true,
                 'auto_reload' => true,
             ],
         ],

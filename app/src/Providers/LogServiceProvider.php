@@ -31,16 +31,15 @@ class LogServiceProvider implements ServiceProviderInterface
     /**
      * Get config for logger
      *
-     * @param array $settings
+     * @param \Slim\Collection $settings
      * @return array
      */
     private function getConfig($settings)
     {
         $key = 'logger';
         $defaults = [];
-        $config = isset($settings[$key]) ? (array) $settings[$key] : [];
 
-        return array_merge_recursive($defaults, $config);
+        return array_merge($defaults, $settings->get($key, []));
     }
 
 }

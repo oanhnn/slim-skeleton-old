@@ -26,7 +26,7 @@ class ViewServiceProvider implements ServiceProviderInterface
 
     /**
      *
-     * @param array $settings
+     * @param \Slim\Collection $settings
      * @return array
      */
     private function getConfig($settings)
@@ -35,9 +35,8 @@ class ViewServiceProvider implements ServiceProviderInterface
         $defaults = [
             'template_path' => APP_PATH . '/views',
         ];
-        $config = isset($settings[$key]) ? $settings[$key] : [];
 
-        return array_merge_recursive($defaults, $config);
+        return array_merge($defaults, $settings->get($key, []));
     }
 
 }

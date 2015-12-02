@@ -32,7 +32,7 @@ class TwigServiceProvider implements ServiceProviderInterface
     /**
      * Get settings for view engine
      *
-     * @param array $settings
+     * @param \Slim\Collection $settings
      * @return array
      */
     private function getConfig($settings)
@@ -46,9 +46,8 @@ class TwigServiceProvider implements ServiceProviderInterface
                 'auto_reload' => true,
             ]
         ];
-        $config = isset($settings[$key]) ? (array) $settings[$key] : [];
 
-        return array_merge_recursive($defaults, $config);
+        return array_merge($defaults, $settings->get($key, []));
     }
 
 }
