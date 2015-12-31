@@ -13,7 +13,7 @@ Requirements
 ------------
 
 * PHP >= 5.5.0
-* slim/slim: ~3.0.0
+* slim/slim: ~3.0
 * monolog/monolog: ~1.13
 
 Optional:
@@ -42,7 +42,8 @@ Composer will create Slim project and all its dependencies under the `path/to/pr
 
 #### Build assets (css, js, ...)
 ```shell
-$ composer build
+$ npm install
+$ node_modules/.bin/gulp build
 ```
 
 #### Unit test

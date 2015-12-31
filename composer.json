@@ -16,7 +16,7 @@
   "require": {
     "php": ">=5.5.0",
     "monolog/monolog": "~1.13",
-    "slim/slim": "^3.0@RC",
+    "slim/slim": "~3.0",
     "slim/twig-view": "^2.0",
     "slim/csrf": "^0.4.0",
     "slim/http-cache": "^0.3.0"
@@ -42,11 +42,8 @@
   },
   "scripts": {
     "post-create-project-cmd": [
-      "php -r \"copy('app/config/app.default.php', 'app/config/app.php');\"",
-      "npm install",
-      "./node_modules/.bin/gulp build"
+      "php -r \"copy('app/config/app.default.php', 'app/config/app.php');\""
     ],
-    "build": "./node_modules/.bin/gulp build",
     "test": "./bin/phpunit",
     "serve": "php -S 0.0.0.0:8888 -t public public/index.php"
   }
