@@ -3,9 +3,12 @@
 /tmp/build
 /node_modules
 /bower_components
-/composer.lock
 /composer.phar
 /app/config/app.php
+
+/composer.lock
+/public/css
+/public/js
 
 # IDE and editor specific files #
 #################################
