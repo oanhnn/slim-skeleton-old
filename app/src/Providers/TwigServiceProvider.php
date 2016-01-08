@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of `oanhnn/slim-skeleton` project.
+ *
+ * (c) OanhNN <oanhnn.bk@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace App\Providers;
 
 use Pimple\Container;
@@ -9,16 +18,15 @@ use Slim\Views\TwigExtension;
 
 class TwigServiceProvider implements ServiceProviderInterface
 {
-
     /**
-     * Register Twig Service Provider
+     * Register Twig Service Provider.
      *
      * @param Container $container
      */
     public function register(Container $container)
     {
         $config = $this->getConfig($container->get('settings'));
-        
+
         $container['view'] = function (Container $container) use ($config) {
             $engine = new Twig($config['template_path'], $config['twig']);
             // Add extensions
@@ -30,24 +38,24 @@ class TwigServiceProvider implements ServiceProviderInterface
     }
 
     /**
-     * Get settings for view engine
+     * Get settings for view engine.
      *
      * @param \Slim\Collection $settings
+     *
      * @return array
      */
     private function getConfig($settings)
     {
         $key = 'view';
         $defaults = [
-            'template_path' => APP_PATH . '/views',
+            'template_path' => APP_PATH.'/views',
             'twig' => [
-                'cache'       => ROOT_PATH . '/tmp/cache/twig',
-                'debug'       => false,
+                'cache' => ROOT_PATH.'/tmp/cache/twig',
+                'debug' => false,
                 'auto_reload' => true,
-            ]
+            ],
         ];
 
         return array_merge($defaults, $settings->get($key, []));
     }
-
 }

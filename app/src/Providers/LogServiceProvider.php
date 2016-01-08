@@ -1,18 +1,26 @@
 <?php
 
+/*
+ * This file is part of `oanhnn/slim-skeleton` project.
+ *
+ * (c) OanhNN <oanhnn.bk@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace App\Providers;
 
-use Pimple\Container;
-use Pimple\ServiceProviderInterface;
+use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 use Monolog\Processor\UidProcessor;
-use Monolog\Handler\StreamHandler;
+use Pimple\Container;
+use Pimple\ServiceProviderInterface;
 
 class LogServiceProvider implements ServiceProviderInterface
 {
-
     /**
-     * Register log service provider
+     * Register log service provider.
      *
      * @param Container $container
      */
@@ -24,14 +32,16 @@ class LogServiceProvider implements ServiceProviderInterface
             $logger = new Logger($config['name']);
             $logger->pushProcessor(new UidProcessor());
             $logger->pushHandler(new StreamHandler($config['path'], Logger::DEBUG));
+
             return $logger;
         };
     }
 
     /**
-     * Get config for logger
+     * Get config for logger.
      *
      * @param \Slim\Collection $settings
+     *
      * @return array
      */
     private function getConfig($settings)
@@ -41,5 +51,4 @@ class LogServiceProvider implements ServiceProviderInterface
 
         return array_merge($defaults, $settings->get($key, []));
     }
-
 }

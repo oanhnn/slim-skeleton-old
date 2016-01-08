@@ -21,7 +21,7 @@
   },
   "private": true,
   "scripts": {
-    "build": "gulp build",
-    "test": "gulp lint && mocha --reporter spec --timeout 5000"
+    "build": "node_modules/.bin/gulp build",
+    "test": "node_modules/.bin/gulp jshint"
   }
 }

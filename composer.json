@@ -44,7 +44,6 @@
     "post-create-project-cmd": [
       "php -r \"copy('app/config/app.default.php', 'app/config/app.php');\""
     ],
-    "test": "./bin/phpunit",
-    "serve": "php -S 0.0.0.0:8888 -t public public/index.php"
+    "test": "./bin/phpunit"
   }
 }

@@ -1,13 +1,22 @@
 <?php
-// Define a working path
+
+/*
+ * This file is part of `oanhnn/slim-skeleton` project.
+ *
+ * (c) OanhNN <oanhnn.bk@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 defined('APP_PATH') || define('APP_PATH', dirname(__DIR__));
 defined('ROOT_PATH') || define('ROOT_PATH', dirname(APP_PATH));
 
 // Load all class
-require_once ROOT_PATH . '/vendor/autoload.php';
+require_once ROOT_PATH.'/vendor/autoload.php';
 
 // Load application settings
-$settings = require_once APP_PATH . '/config/app.php';
+$settings = require_once APP_PATH.'/config/app.php';
 
 // Create container for application
 $container = new \Slim\Container($settings);
@@ -21,6 +30,6 @@ $container->register(new \App\Providers\LogServiceProvider());
 $app = new \Slim\App($container);
 
 // Register middlewares and routes
-require_once APP_PATH . '/config/routes.php';
+require_once APP_PATH.'/config/routes.php';
 
 return $app;
