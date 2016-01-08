@@ -22,7 +22,7 @@ if (php_sapi_name() === 'cli-server') {
     }
 }
 
-/*
+/**
  * Defines constants
  */
 //define('ROOT_PATH', dirname(__DIR__));
@@ -33,8 +33,6 @@ ini_set('display_errors', 1);
 
 /**
  * Run application.
- *
- * @var \Slim\App
  */
 /*@var $app \Slim\App */
 $app = require_once __DIR__.'/../app/config/bootstrap.php';

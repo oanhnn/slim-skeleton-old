@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace app\tests;
+namespace App\Tests;
 
 class ExampleTest extends TestCase
 {

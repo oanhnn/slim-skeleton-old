@@ -12,7 +12,8 @@ EOF;
 Symfony\CS\Fixer\Contrib\HeaderCommentFixer::setHeader($header);
 
 return Symfony\CS\Config\Config::create()
-    // use default SYMFONY_LEVEL and extra fixers:
+    // use default PSR-2 and extra fixers:
+    ->level('psr2')
     ->fixers(array(
         'header_comment',
         'short_array_syntax',
@@ -24,7 +25,7 @@ return Symfony\CS\Config\Config::create()
     ))
     ->finder(
         Symfony\CS\Finder\DefaultFinder::create()
-            ->exclude('Symfony/CS/Tests/Fixtures')
+            ->exclude('tmp')
             ->in(__DIR__)
     )
 ;

@@ -19,5 +19,5 @@ install:
   - npm install
 
 script:
-  - node_modules/.bin/gulp
-  - bin/phpunit
+  - npm run-script build
+  - phpunit

@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace app\tests;
+namespace App\Tests;
 
 class TestCase extends \PHPUnit_Framework_TestCase
 {
