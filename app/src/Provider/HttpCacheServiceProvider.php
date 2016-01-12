@@ -9,12 +9,19 @@
  * with this source code in the file LICENSE.
  */
 
-namespace App\Providers;
+namespace App\Provider;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 use Slim\HttpCache\CacheProvider;
 
+/**
+ * Http cache service provider
+ *
+ * <code>
+ * $ composer require slim/http-cache ^ 0.3.0
+ * </code>
+ */
 class HttpCacheServiceProvider implements ServiceProviderInterface
 {
     /**

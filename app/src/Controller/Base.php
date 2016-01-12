@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace App\Http\Controllers;
+namespace App\Controller;
 
 use Interop\Container\ContainerInterface;
 use Psr\Http\Message\ResponseInterface;

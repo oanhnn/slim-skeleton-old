@@ -22,9 +22,10 @@ $settings = require_once APP_PATH.'/config/app.php';
 $container = new \Slim\Container($settings);
 
 // Register service providers & factories
-$container->register(new \App\Providers\TwigServiceProvider());
-$container->register(new \App\Providers\HttpCacheServiceProvider());
-$container->register(new \App\Providers\LogServiceProvider());
+$container->register(new \App\Provider\TwigServiceProvider());
+$container->register(new \App\Provider\HttpCacheServiceProvider());
+$container->register(new \App\Provider\LogServiceProvider());
+$container->register(new \App\Provider\DoctrineDBALServiceProvider());
 
 // Create new application
 $app = new \Slim\App($container);

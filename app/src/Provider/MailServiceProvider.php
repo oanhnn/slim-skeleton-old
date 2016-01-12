@@ -9,14 +9,15 @@
  * with this source code in the file LICENSE.
  */
 
-namespace App\Providers;
+namespace App\Provider;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 
-class AppServiceProvider implements ServiceProviderInterface
+class MailServiceProvider implements ServiceProviderInterface
 {
     public function register(Container $container)
     {
+        // TODO
     }
 }

@@ -3,16 +3,25 @@
 {% block body %}
     <div class="container">
         <div class="page-header">
-            <h1>Slim - <small>a microframework for PHP</small></h1>
+            <h1>List orders</h1>
         </div>
         <div>
-            <ul>
-                <li><a href="http://www.slimframework.com">Homepage</a></li>
-                <li><a href="http://www.slimframework.com/blog">Blog</a></li>
-                <li><a href="http://docs.slimframework.com">Documents</a></li>
-                <li><a href="https://github.com/slim/slim">Github</a></li>
-            </ul>
-            <h3><a href="{{ path_for('orderspage') }}">List orders</a></h3>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Email</th>
+                    <th>Message</th>
+                    <th>Created</th>
+                </tr>
+                {% for order in orders %}
+                <tr>
+                    <td>{{ order.orderId }}</td>
+                    <td>{{ order.email }}</td>
+                    <td>{{ order.message }}</td>
+                    <td>{{ order.createdAt is null ? 'none' : order.createdAt|date('M d, Y') }}</td>
+                </tr>
+                {% endfor %}
+            </table>
         </div>
     </div>
     <footer class="footer">

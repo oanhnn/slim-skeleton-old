@@ -9,18 +9,16 @@
  * with this source code in the file LICENSE.
  */
 
-namespace App\Providers;
+namespace App\Provider;
 
-use Monolog\Handler\StreamHandler;
-use Monolog\Logger;
-use Monolog\Processor\UidProcessor;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
+use Slim\Views\PhpRenderer;
 
-class LogServiceProvider implements ServiceProviderInterface
+class ViewServiceProvider implements ServiceProviderInterface
 {
     /**
-     * Register log service provider.
+     * Register PHP view service provider.
      *
      * @param Container $container
      */
@@ -28,26 +26,24 @@ class LogServiceProvider implements ServiceProviderInterface
     {
         $config = $this->getConfig($container->get('settings'));
 
-        $container['logger'] = function () use ($config) {
-            $logger = new Logger($config['name']);
-            $logger->pushProcessor(new UidProcessor());
-            $logger->pushHandler(new StreamHandler($config['path'], Logger::DEBUG));
+        $container['view'] = function () use ($config) {
+            $engine = new PhpRenderer($config['template_path']);
 
-            return $logger;
+            return $engine;
         };
     }
 
     /**
-     * Get config for logger.
-     *
      * @param \Slim\Collection $settings
      *
      * @return array
      */
     private function getConfig($settings)
     {
-        $key = 'logger';
-        $defaults = [];
+        $key = 'view';
+        $defaults = [
+            'template_path' => APP_PATH.'/views',
+        ];
 
         return array_merge($defaults, $settings->get($key, []));
     }

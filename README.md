@@ -8,7 +8,11 @@ Slim Skeleton
 [![Join the chat at https://gitter.im/oanhnn/slim-skeleton](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/oanhnn/slim-skeleton?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 A skeleton for [Slim Framework v3](http://slimframework.com/) following MVC pattern.   
-It support monolog, twig view, gulp, ...
+It support:
+- Logging with monolog
+- Template with twig view (PHP view, ...)
+- Database accessing with doctrine dbal
+- Build assets with gulp, npm
 
 Requirements
 ---
