@@ -16,6 +16,7 @@ before_install:
 
 install:
   - composer install --dev
+  - php -r "copy('app/config/app.default.php', 'app/config/app.php');"
   - npm install
 
 script:

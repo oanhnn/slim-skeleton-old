@@ -18,6 +18,10 @@ class ExampleTest extends TestCase
      */
     public function testBasicExample()
     {
-        $this->markTestSkipped('This is an example basic test');
+        $res = $this->call('GET', '/');
+
+        $this->assertEquals('1.1', $res->getProtocolVersion());
+        $this->assertEquals(200, $res->getStatusCode());
+        $this->assertEquals('text/html; charset=UTF-8', $res->getHeaderLine('Content-Type'));
     }
 }

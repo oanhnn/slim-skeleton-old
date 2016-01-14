@@ -1,7 +1,7 @@
 {
   "name": "oanhnn/slim-skeleton",
   "type": "project",
-  "version": "3.0.1",
+  "version": "3.1.1",
   "description": "A Slim Framework skeleton application for rapid development",
   "keywords": ["micro-framework", "rest", "router", "skeleton"],
   "homepage": "https://github.com/oanhnn/slim-skeleton",
