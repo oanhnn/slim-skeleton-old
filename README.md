@@ -12,7 +12,8 @@ It support:
 - Logging with monolog
 - Template with twig view (PHP view, ...)
 - Database accessing with doctrine dbal
-- Build assets with gulp, npm
+- Builds assets with gulp, npm
+- Tests call a request with PHPUnit, example in [here](https://github.com/oanhnn/slim-skeleton/blob/3.x/app/tests/ExampleTest.php)
 
 Requirements
 ---
