@@ -11,7 +11,7 @@
 
 namespace App\Tests;
 
-class ExampleTest extends TestCase
+class ExampleTest extends IntegrationTestCase
 {
     /**
      * A basic functional test example.
@@ -20,8 +20,8 @@ class ExampleTest extends TestCase
     {
         $res = $this->call('GET', '/');
 
-        $this->assertEquals('1.1', $res->getProtocolVersion());
-        $this->assertEquals(200, $res->getStatusCode());
-        $this->assertEquals('text/html; charset=UTF-8', $res->getHeaderLine('Content-Type'));
+        $this->assertSame('1.1', $res->getProtocolVersion());
+        $this->assertSame(200, $res->getStatusCode());
+        $this->assertSame('text/html; charset=UTF-8', $res->getHeaderLine('Content-Type'));
     }
 }
