@@ -23,8 +23,7 @@
     "doctrine/dbal": "^2.5"
   },
   "require-dev": {
-    "phpunit/phpunit": "5.1.*",
-    "symfony/console": "~2.0"
+    "phpunit/phpunit": "~4.8"
   },
   "suggest": {
     "monolog/monolog": "Required to use log service provider (~1.13)",
